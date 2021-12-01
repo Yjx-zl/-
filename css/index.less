@@ -1,0 +1,238 @@
+body {
+    min-width: 320px;
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: #f2f4f7;
+}
+a {
+    text-decoration: none;
+}
+// 约束当前屏幕 大于 750px 的时候，html 字体大小就不变化了
+@media screen and (min-width: 750px) {
+    html {
+        font-size: 37.5px !important;
+    }
+}
+.wrap {
+    background-color: #fff;
+    padding-bottom: 1.146667rem;
+}
+// 顶部
+.header {
+    height: 2.133333rem;
+    border-bottom: .026667rem solid #EAEAEA;
+    text-align: center;
+    line-height: 2.133333rem;
+    h3 {
+        font-weight: 400;
+        font-size: .933333rem;
+        color: #1C1C1C;
+    }
+}
+
+//nav
+.nav {
+    display: flex;
+    // 换行
+    flex-wrap: wrap;
+    padding: 1.173333rem 0 1.6rem 0;
+    a {
+        display: flex;
+        flex: 33.33%;
+        flex-direction: column;
+        // 水平居中
+        align-items: center;
+
+        .item_ico {
+            display: block;
+            width: 3.706667rem;
+            height: 3.706667rem;
+            background: url(../icons/icon1.png) no-repeat;
+            background-size: 3.706667rem auto;
+        }
+        &:nth-child(2) .item_ico {
+            background: url(../icons/icon2.png) no-repeat;
+            background-size: 3.706667rem auto;
+        }
+        &:nth-child(3) .item_ico {
+            background: url(../icons/icon3.png) no-repeat;
+            background-size: 3.706667rem auto;
+        }
+        &:nth-child(4) .item_ico {
+            background: url(../icons/icon4.png) no-repeat;
+            background-size: 3.706667rem auto;
+        }
+        &:nth-child(5) .item_ico {
+            background: url(../icons/icon5.png) no-repeat;
+            background-size: 3.706667rem auto;
+        }
+        &:nth-child(6) .item_ico {
+            background: url(../icons/icon6.png) no-repeat;
+            background-size: 3.706667rem auto;
+        }
+        span {
+            font-size: .666667rem;
+            color: #707070;
+        }
+        // 选中前三个
+        &:nth-child(-n+3) {
+        margin-bottom: 1.84rem;
+    }
+    }
+    
+}
+
+// go
+.go {
+    margin: 0 .266667rem 0 .48rem;
+}
+
+//content
+.content {
+    margin-top: .266667rem;
+    padding: 1.066667rem .586667rem 1.066667rem .64rem;
+    background-color: #fff;
+    .con_hd {
+        display: flex;
+        justify-content: space-between;
+        height: 1.013333rem;
+        line-height: 1.013333rem;
+        margin-bottom: .906667rem;
+        h4 {
+            margin: 0;
+            font-size: .72rem;
+            color: #333333;
+            .icon {
+                display: inline-block;
+                width: 1.013333rem;
+                height: 1.013333rem;
+                // 添加这行代码 图片和文字垂直居中（因为默认基线对齐）
+                vertical-align: middle;
+            } 
+        }
+        .more {
+            font-size: .586667rem;
+            color: #999999;
+        }
+    }
+}
+// 旋转木马轮播图
+.get_job_focus {
+    position: relative;
+    .swiper-container {
+        // width: 100%;
+        // 根据需求把宽度改为 540px
+        width: 14.4rem;
+        height: 100%;
+      }
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        img {
+            width: 9.013333rem;
+            height: 10.026667rem;
+        }
+        p {
+            width: 9.013333rem;
+            font-size: .666667rem;
+            color: #333333;
+            margin-top: .64rem;
+        }
+  
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        // 我们把主轴设置成y轴排列
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        transition: 300ms;
+        // 其余兄弟都是0.8
+        transform: scale(0.8);
+        // 未被选中照片 透明度
+        opacity: 0.4;
+      }
+      .swiper-slide-active,.swiper-slide-duplicate-active{
+        transform: scale(1);
+        // 提升优先级
+        z-index: 999;
+        // 当前照片透明度
+        opacity: 1;
+      }
+}
+
+
+// 充电学习轮播图
+.study_content {
+    // 因为底部的是固定定位 遮挡空间
+    padding-bottom: 3.733333rem;
+}
+.study {
+    .study_fo {
+        padding: .266667rem;
+    }
+    .swiper-slide {
+        width: 7.733333rem;
+        height: 9.066667rem;
+        font-size: 18px;
+        background: #fff;
+        background-color: #fff;
+        border-radius: .213333rem;
+        box-shadow: 0 0 .266667rem rgba(0, 0, 0, 0.1);
+        display: flex;
+        // 竖着显示
+        flex-direction: column;
+        padding: 0 .266667rem;
+        img {
+             margin-top: .266667rem;
+        }
+        h5{
+            font-size: .693333rem;
+            font-weight: 400;
+            margin: .533333rem 0;
+        }
+        p {
+            font-size: .693333rem;
+            color: #9d9d9d;
+        }
+      }
+}
+
+// 底部
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 2.933333rem;
+    border-top: .026667rem solid #ccc;
+    width: 100%;
+    background-color: #fff;
+    padding: .533333rem;
+    // 固定定位被上面压住，提升优先级
+    z-index: 999;
+    display: flex;
+    .item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+            width: 1.04rem;
+            height: 1.093333rem;
+            margin-bottom: .266667rem;
+        }
+        p {
+            font-size: .586667rem;
+            color: #666666;
+        }
+    }
+}
